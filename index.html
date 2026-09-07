@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abnormal Music Player</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="player-container">
+        <audio id="audioPlayer" src="music1.mp3"></audio>
+        
+        <header class="player-head">
+            <span class="logo">Abnormal.</span>
+            <button class="queue-btn">QUEUE</button>
+        </header>
+
+        <div class="playing-music">
+            <div class="disc" id="vinylDisc">
+                <div class="disc-grooves"></div>
+                <div class="inner-disc">MB</div>
+            </div>
+            <div class="info">
+                <h1 id="songTitle">Late Light</h1>
+                <h2 id="songArtist">Marlowe Bay</h2>
+                <h3 id="songAlbum">SLOW TIDES · 2026</h3>
+            </div>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-bar" id="timelineBar">
+                <div class="progress-fill" id="progressFill"></div>
+                <div class="progress-handle" id="progressHandle"></div>
+            </div>
+            <div class="time-stamps">
+                <span id="currentTimeDisplay">0:00</span>
+                <span id="totalTimeDisplay">0:24</span>
+            </div>
+        </div>
+
+        <div class="play-bar">
+            <button class="icon-btn shuffle-btn active" title="Shuffle">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/>
+                </svg>
+            </button>
+            <button class="icon-btn prev-btn" id="prevBtn" title="Previous">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                    <line x1="5" y1="4" x2="5" y2="20" stroke="currentColor" stroke-width="2"></line>
+                </svg>
+            </button>
+            <button class="play-btn" id="playBtn" title="Play">
+                <svg id="playIcon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="7 4 20 12 7 20 7 4"></polygon>
+                </svg>
+            </button>
+            <button class="icon-btn next-btn" id="nextBtn" title="Next">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                    <line x1="19" y1="4" x2="19" y2="20" stroke="currentColor" stroke-width="2"></line>
+                </svg>
+            </button>
+            <button class="icon-btn repeat-btn" title="Repeat">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="17 1 21 5 17 9"></polyline>
+                    <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+                    <polyline points="7 23 3 19 7 15"></polyline>
+                    <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div class="volume-container">
+            <div class="volume-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
+            </div>
+            <div class="volume-bar" id="volumeBar">
+                <div class="volume-fill" id="volumeFill"></div>
+                <div class="volume-handle" id="volumeHandle"></div>
+            </div>
+            <span class="volume-level" id="volumeLevel">70</span>
+        </div>
+
+        <!-- Playlist -->
+        <div class="track-list">
+            <ol id="playlistContainer"></ol>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
